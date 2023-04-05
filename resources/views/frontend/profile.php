@@ -1,7 +1,5 @@
 <?php require_once __DIR__ . "/layout/header.php" ?>
 
-
-
 <!-- center -->
 <section style="background-color: #eee;">
   <div class="container py-5 mx-auto">

@@ -32,6 +32,7 @@
         </div>
 
         <form action="/cart" method="post">
+          <input type="hidden" name="id" value="<?= $product->id ?>">
           <input type="hidden" name="images" value="<?= $product->images ?>">
           <input type="hidden" name="title" value="<?= $product->title ?>">
           <input type="hidden" name="price" value="<?= $product->price ?>">

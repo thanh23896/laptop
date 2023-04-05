@@ -5,7 +5,7 @@
     <input type="hidden" name="" class="a" value="">
     <div class="relative  w-full ">
       <a href="" class="img-link">
-        <img id="image" class="w-full h-full" src="https://th.bing.com/th/id/R.5ac029a12863c8b782c940b24765d37b?rik=sC5a%2bh9dJ7fmjw&pid=ImgRaw&r=0" alt="">
+        <img id="image" class="w-full h-[600px]" style="object-fit: contain;" src="/images/1676629948a.webp" alt="">
       </a>
     </div>
 

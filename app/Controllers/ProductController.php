@@ -51,6 +51,9 @@ class ProductController extends Controller
     }
     public function cart()
     {
+        if (!isset($_SESSION['products'])) {
+            $_SESSION['products'] = [];
+        }
         $total = 0;
         $products = $_SESSION['products'];
         return $this->view('frontend/cart', ["products" => $products, "total" => $total]);
@@ -64,7 +67,6 @@ class ProductController extends Controller
     }
     public function changeCart(Request $request)
     {
-        $product = $request->getBody();
         $qty = $_POST['quantity'];
         foreach ($_SESSION['products'] as $key => $item) {
             $_SESSION['products'][$key]['numberQuantity'] = $qty[$key];

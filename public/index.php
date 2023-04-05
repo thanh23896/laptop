@@ -1,13 +1,13 @@
 <?php
 
+use App\Controllers\admin\BillController;
 use App\Router;
 use App\Controllers\admin\HomeController as AdminHomeController;
 use App\Controllers\admin\ProductController as AdminProductController;
 use App\Controllers\admin\CategoryController as AdminCategoryController;
 use App\Controllers\admin\UserController as AdminUserController;
 use App\Controllers\admin\CommentController as AdminCommentController;
-
-
+use App\Controllers\CheckoutController;
 use App\Controllers\HomeController as UserHomeController;
 use App\Controllers\ProductController;
 use App\Controllers\UserController;
@@ -33,10 +33,10 @@ Router::get('/cart', [ProductController::class, 'cart']);
 Router::post('/cart', [ProductController::class, 'addProduct']);
 Router::post('/changeCart', [ProductController::class, 'changeCart']);
 Router::get('/delete-cart', [ProductController::class, 'deleteCart']);
-Router::get('/dathang', [ProductController::class, 'index']);
+Router::get('/dathang', [CheckoutController::class, 'index']);
+Router::post('/dathang', [CheckoutController::class, 'dathang']);
 
 Router::get('/admin', [AdminHomeController::class, 'index']);
-Router::get('/admin/login', [AdminHomeController::class, 'index']);
 
 
 //user
@@ -59,6 +59,8 @@ Router::get('/admin/category/edit', [AdminCategoryController::class, 'edit']);
 Router::post('/admin/category/edit', [AdminCategoryController::class, 'update']);
 Router::get('/admin/category/delete', [AdminCategoryController::class, 'delete']);
 //bill
-Router::get('/admin/bill', [AdminHomeController::class, 'index']);
+Router::get('/admin/invoice', [BillController::class, 'index']);
+Router::get('/admin/bill/show', [BillController::class, 'show']);
+Router::post('/admin/invoice', [BillController::class, 'changeStatus']);
 
 $router->resolve();

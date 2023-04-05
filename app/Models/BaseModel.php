@@ -60,6 +60,7 @@ class BaseModel
 
         $stmt = $this->conn->prepare($this->sqlBuilder);
         $stmt->execute($data);
+        return $this->conn->lastInsertId();
     }
     /**
      * function findOne($id)
